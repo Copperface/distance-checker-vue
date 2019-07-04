@@ -1,28 +1,50 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div class="distance-checker">
+    <div class="distance-checker__wrapper">
+      <h1 class="distance-checker__title">Узнай дистанцию</h1>
+      <CheckBlock />
+      <CheckResults />
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import CheckBlock from "@/components/CheckBlock.vue";
+import CheckResults from "@/components/CheckResults.vue";
+
+import ymapsInit from "@/utils/ymapsInit.js";
+import "reset-css";
 
 export default {
   name: "app",
   components: {
-    HelloWorld
+    CheckBlock,
+    CheckResults
+  },
+  mounted() {
+    ymapsInit();
   }
 };
 </script>
 
 <style lang="scss">
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.distance-checker {
+  &__wrapper {
+    min-width: 768px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #6ed0f6;
+
+    @media screen and (max-width: 765px) {
+      min-width: 320px;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 48px;
+    font-weight: bold;
+    padding: 20px 0;
+  }
 }
 </style>
