@@ -2,10 +2,12 @@
   "name": "distance-checker-vue",
   "version": "0.1.0",
   "private": true,
+  "homepage": "git@github.com:Copperface/distance-checker-vue",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "deploy": "node ./node_modules/vue-gh-pages/index.js --branch gh-pages"
   },
   "dependencies": {
     "core-js": "^2.6.5",
