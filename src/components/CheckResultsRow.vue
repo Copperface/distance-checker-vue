@@ -48,6 +48,10 @@ export default {
 
   &__data {
     font-size: 18px;
+
+    &.error {
+      color: #f00;
+    }
   }
 }
 </style>
